@@ -1,0 +1,123 @@
+[{
+  "name": "PostCommentRequestBody",
+  "message": {
+    "fields": [{
+      "name": "content",
+      "type": "string"
+    }, {
+      "name": "timestamp",
+      "type": "number"
+    }]
+  }
+}, {
+  "name": "PostCommentResponse",
+  "message": {
+    "fields": []
+  }
+}, {
+  "name": "PostComment",
+  "service": {
+    "path": "/PostComment",
+    "body": "PostCommentRequestBody",
+    "auth": {
+      "key": "auth",
+      "type": "WebClientSession",
+      "import": "@phading/user_session_service_interface/web_client_session"
+    },
+    "response": "PostCommentResponse",
+    "outputWebClient": "./client_requests",
+    "outputHandler": "./server_handlers"
+  }
+}, {
+  "name": "ListPostedCommentsRequestBody",
+  "message": {
+    "fields": []
+  }
+}, {
+  "name": "ListPostedCommentsResponse",
+  "message": {
+    "fields": [{
+      "name": "comments",
+      "type": "Comment",
+      "import": "../comment",
+      "isArray": true
+    }]
+  }
+}, {
+  "name": "ListPostedComments",
+  "service": {
+    "path": "/ListPostedComments",
+    "body": "ListPostedCommentsRequestBody",
+    "auth": {
+      "key": "auth",
+      "type": "WebClientSession",
+      "import": "@phading/user_session_service_interface/web_client_session"
+    },
+    "response": "ListPostedCommentsResponse",
+    "outputWebClient": "./client_requests",
+    "outputHandler": "./server_handlers"
+  }
+}, {
+  "name": "GetCommentsRequestBody",
+  "message": {
+    "fields": [{
+      "name": "showId",
+      "type": "string"
+    }]
+  }
+}, {
+  "name": "GetCommentsResponse",
+  "message": {
+    "fields": [{
+      "name": "comments",
+      "type": "Comment",
+      "import": "../comment",
+      "isArray": true
+    }]
+  }
+}, {
+  "name": "GetComments",
+  "service": {
+    "path": "/GetComments",
+    "body": "GetCommentsRequestBody",
+    "auth": {
+      "key": "auth",
+      "type": "WebClientSession",
+      "import": "@phading/user_session_service_interface/web_client_session"
+    },
+    "response": "GetCommentsResponse",
+    "outputWebClient": "./client_requests",
+    "outputHandler": "./server_handlers"
+  }
+}, {
+  "name": "LikeCommentRequestBody",
+  "message": {
+    "fields": [{
+      "name": "commentId",
+      "type": "string"
+    }, {
+      "name": "like",
+      "type": "boolean",
+      "comment": "Like or dislike."
+    }]
+  }
+}, {
+  "name": "LikeCommentResponse",
+  "message": {
+    "fields": []
+  }
+}, {
+  "name": "LikeComment",
+  "service": {
+    "path": "/LikeComment",
+    "body": "LikeCommentRequestBody",
+    "auth": {
+      "key": "auth",
+      "type": "WebClientSession",
+      "import": "@phading/user_session_service_interface/web_client_session"
+    },
+    "response": "LikeCommentResponse",
+    "outputWebClient": "./client_requests",
+    "outputHandler": "./server_handlers"
+  }
+}]

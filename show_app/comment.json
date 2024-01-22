@@ -1,0 +1,24 @@
+[{
+  "name": "Comment",
+  "message": {
+    "fields": [{
+      "name": "commentId",
+      "type": "string"
+    }, {
+      "name": "content",
+      "type": "string"
+    }, {
+      "name": "timestamp",
+      "type": "number",
+      "comment": "Timestamp in seconds of the video."
+    }, {
+      "name": "author",
+      "type": "AccountSnapshot",
+      "import": "@phading/user_service_interface/third_person/account"
+    }, {
+      "name": "isThePublisher",
+      "type": "boolean",
+      "comment": "Whether the author is the publisher of the show."
+    }]
+  }
+}]
