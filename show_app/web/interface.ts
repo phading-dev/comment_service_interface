@@ -1,7 +1,7 @@
 import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
 import { ServiceDescriptor } from '@selfage/service_descriptor';
 import { WEB_CLIENT_SESSION } from '@phading/user_session_service_interface/web_client_session';
-import { Comment, COMMENT } from '../comment';
+import { Comment, COMMENT, Liking, LIKING } from '../comment';
 
 export interface PostCommentRequestBody {
   content?: string,
@@ -131,8 +131,7 @@ export let GET_COMMENTS: ServiceDescriptor = {
 
 export interface LikeCommentRequestBody {
   commentId?: string,
-/* Like or dislike. */
-  like?: boolean,
+  liking?: Liking,
 }
 
 export let LIKE_COMMENT_REQUEST_BODY: MessageDescriptor<LikeCommentRequestBody> = {
@@ -143,8 +142,8 @@ export let LIKE_COMMENT_REQUEST_BODY: MessageDescriptor<LikeCommentRequestBody> 
       primitiveType: PrimitiveType.STRING,
     },
     {
-      name: 'like',
-      primitiveType: PrimitiveType.BOOLEAN,
+      name: 'liking',
+      enumType: LIKING,
     },
   ]
 };

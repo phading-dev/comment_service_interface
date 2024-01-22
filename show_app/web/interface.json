@@ -96,9 +96,9 @@
       "name": "commentId",
       "type": "string"
     }, {
-      "name": "like",
-      "type": "boolean",
-      "comment": "Like or dislike."
+      "name": "liking",
+      "type": "Liking",
+      "import": "../comment"
     }]
   }
 }, {

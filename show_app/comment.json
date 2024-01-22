@@ -1,4 +1,18 @@
 [{
+  "name": "Liking",
+  "enum": {
+    "values": [{
+      "name": "NEUTRAL",
+      "value": 1
+    }, {
+      "name": "LIKE",
+      "value": 2
+    }, {
+      "name": "DISLIKE",
+      "value": 3
+    }]
+  }
+}, {
   "name": "Comment",
   "message": {
     "fields": [{
@@ -19,6 +33,9 @@
       "name": "isThePublisher",
       "type": "boolean",
       "comment": "Whether the author is the publisher of the show."
+    }, {
+      "name": "liking",
+      "type": "Liking"
     }]
   }
 }]
