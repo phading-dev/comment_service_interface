@@ -4,6 +4,7 @@ import { WEB_CLIENT_SESSION } from '@phading/user_session_service_interface/web_
 import { Comment, COMMENT, Liking, LIKING } from '../comment';
 
 export interface PostCommentRequestBody {
+  showId?: string,
   content?: string,
   timestamp?: number,
 }
@@ -11,6 +12,10 @@ export interface PostCommentRequestBody {
 export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> = {
   name: 'PostCommentRequestBody',
   fields: [
+    {
+      name: 'showId',
+      primitiveType: PrimitiveType.STRING,
+    },
     {
       name: 'content',
       primitiveType: PrimitiveType.STRING,

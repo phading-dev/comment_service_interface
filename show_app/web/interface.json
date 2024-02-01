@@ -2,6 +2,9 @@
   "name": "PostCommentRequestBody",
   "message": {
     "fields": [{
+      "name": "showId",
+      "type": "string"
+    }, {
       "name": "content",
       "type": "string"
     }, {
