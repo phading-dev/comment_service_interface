@@ -1,11 +1,12 @@
 import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
+import { Comment, COMMENT, Liking, LIKING } from '../comment';
 import { ServiceDescriptor } from '@selfage/service_descriptor';
 import { WEB_CLIENT_SESSION } from '@phading/user_session_service_interface/web_client_session';
-import { Comment, COMMENT, Liking, LIKING } from '../comment';
 
 export interface PostCommentRequestBody {
   showId?: string,
   content?: string,
+/* Timestamp in milliseconds of the video. */
   timestamp?: number,
 }
 
@@ -28,11 +29,16 @@ export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> 
 };
 
 export interface PostCommentResponse {
+  comment?: Comment,
 }
 
 export let POST_COMMENT_RESPONSE: MessageDescriptor<PostCommentResponse> = {
   name: 'PostCommentResponse',
   fields: [
+    {
+      name: 'comment',
+      messageType: COMMENT,
+    },
   ]
 };
 

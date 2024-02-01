@@ -24,7 +24,7 @@
     }, {
       "name": "timestamp",
       "type": "number",
-      "comment": "Timestamp in seconds of the video."
+      "comment": "Timestamp in milliseconds of the video."
     }, {
       "name": "author",
       "type": "AccountSnapshot",

@@ -9,13 +9,18 @@
       "type": "string"
     }, {
       "name": "timestamp",
-      "type": "number"
+      "type": "number",
+      "comment": "Timestamp in milliseconds of the video."
     }]
   }
 }, {
   "name": "PostCommentResponse",
   "message": {
-    "fields": []
+    "fields": [{
+      "name": "comment",
+      "type": "Comment",
+      "import": "../comment"
+    }]
   }
 }, {
   "name": "PostComment",

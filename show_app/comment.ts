@@ -28,7 +28,7 @@ export let LIKING: EnumDescriptor<Liking> = {
 export interface Comment {
   commentId?: string,
   content?: string,
-/* Timestamp in seconds of the video. */
+/* Timestamp in milliseconds of the video. */
   timestamp?: number,
   author?: AccountSnapshot,
 /* Whether the author is the publisher of the show. */
