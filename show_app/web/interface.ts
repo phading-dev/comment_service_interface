@@ -140,6 +140,49 @@ export let GET_COMMENTS: ServiceDescriptor = {
   },
 }
 
+export interface GetCommentLikingRequestBody {
+  commentId?: string,
+}
+
+export let GET_COMMENT_LIKING_REQUEST_BODY: MessageDescriptor<GetCommentLikingRequestBody> = {
+  name: 'GetCommentLikingRequestBody',
+  fields: [
+    {
+      name: 'commentId',
+      primitiveType: PrimitiveType.STRING,
+    },
+  ]
+};
+
+export interface GetCommentLikingResponse {
+  liking?: Liking,
+}
+
+export let GET_COMMENT_LIKING_RESPONSE: MessageDescriptor<GetCommentLikingResponse> = {
+  name: 'GetCommentLikingResponse',
+  fields: [
+    {
+      name: 'liking',
+      enumType: LIKING,
+    },
+  ]
+};
+
+export let GET_COMMENT_LIKING: ServiceDescriptor = {
+  name: "GetCommentLiking",
+  path: "/GetCommentLiking",
+  body: {
+    messageType: GET_COMMENT_LIKING_REQUEST_BODY,
+  },
+  auth: {
+    key: "auth",
+    type: WEB_CLIENT_SESSION
+  },
+  response: {
+    messageType: GET_COMMENT_LIKING_RESPONSE,
+  },
+}
+
 export interface LikeCommentRequestBody {
   commentId?: string,
   liking?: Liking,

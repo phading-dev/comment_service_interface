@@ -33,9 +33,6 @@
       "name": "isThePublisher",
       "type": "boolean",
       "comment": "Whether the author is the publisher of the show."
-    }, {
-      "name": "liking",
-      "type": "Liking"
     }]
   }
 }]

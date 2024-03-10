@@ -1,5 +1,5 @@
 import { WebServiceClientInterface } from '@selfage/service_descriptor/web_service_client_interface';
-import { PostCommentRequestBody, PostCommentResponse, POST_COMMENT, ListPostedCommentsRequestBody, ListPostedCommentsResponse, LIST_POSTED_COMMENTS, GetCommentsRequestBody, GetCommentsResponse, GET_COMMENTS, LikeCommentRequestBody, LikeCommentResponse, LIKE_COMMENT } from './interface';
+import { PostCommentRequestBody, PostCommentResponse, POST_COMMENT, ListPostedCommentsRequestBody, ListPostedCommentsResponse, LIST_POSTED_COMMENTS, GetCommentsRequestBody, GetCommentsResponse, GET_COMMENTS, GetCommentLikingRequestBody, GetCommentLikingResponse, GET_COMMENT_LIKING, LikeCommentRequestBody, LikeCommentResponse, LIKE_COMMENT } from './interface';
 
 export function postComment(
   client: WebServiceClientInterface,
@@ -27,6 +27,16 @@ export function getComments(
 ): Promise<GetCommentsResponse> {
   return client.send({
     descriptor: GET_COMMENTS,
+    body,
+  });
+}
+
+export function getCommentLiking(
+  client: WebServiceClientInterface,
+  body: GetCommentLikingRequestBody,
+): Promise<GetCommentLikingResponse> {
+  return client.send({
+    descriptor: GET_COMMENT_LIKING,
     body,
   });
 }

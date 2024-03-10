@@ -33,7 +33,6 @@ export interface Comment {
   author?: AccountSnapshot,
 /* Whether the author is the publisher of the show. */
   isThePublisher?: boolean,
-  liking?: Liking,
 }
 
 export let COMMENT: MessageDescriptor<Comment> = {
@@ -58,10 +57,6 @@ export let COMMENT: MessageDescriptor<Comment> = {
     {
       name: 'isThePublisher',
       primitiveType: PrimitiveType.BOOLEAN,
-    },
-    {
-      name: 'liking',
-      enumType: LIKING,
     },
   ]
 };

@@ -98,6 +98,37 @@
     "outputHandler": "./server_handlers"
   }
 }, {
+  "name": "GetCommentLikingRequestBody",
+  "message": {
+    "fields": [{
+      "name": "commentId",
+      "type": "string"
+    }]
+  }
+}, {
+  "name": "GetCommentLikingResponse",
+  "message": {
+    "fields": [{
+      "name": "liking",
+      "type": "Liking",
+      "import": "../comment"
+    }]
+  }
+}, {
+  "name": "GetCommentLiking",
+  "service": {
+    "path": "/GetCommentLiking",
+    "body": "GetCommentLikingRequestBody",
+    "auth": {
+      "key": "auth",
+      "type": "WebClientSession",
+      "import": "@phading/user_session_service_interface/web_client_session"
+    },
+    "response": "GetCommentLikingResponse",
+    "outputWebClient": "./client_requests",
+    "outputHandler": "./server_handlers"
+  }
+}, {
   "name": "LikeCommentRequestBody",
   "message": {
     "fields": [{

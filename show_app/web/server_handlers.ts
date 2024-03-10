@@ -1,5 +1,5 @@
 import { ServiceHandlerInterface } from '@selfage/service_descriptor/service_handler_interface';
-import { POST_COMMENT, PostCommentRequestBody, PostCommentResponse, LIST_POSTED_COMMENTS, ListPostedCommentsRequestBody, ListPostedCommentsResponse, GET_COMMENTS, GetCommentsRequestBody, GetCommentsResponse, LIKE_COMMENT, LikeCommentRequestBody, LikeCommentResponse } from './interface';
+import { POST_COMMENT, PostCommentRequestBody, PostCommentResponse, LIST_POSTED_COMMENTS, ListPostedCommentsRequestBody, ListPostedCommentsResponse, GET_COMMENTS, GetCommentsRequestBody, GetCommentsResponse, GET_COMMENT_LIKING, GetCommentLikingRequestBody, GetCommentLikingResponse, LIKE_COMMENT, LikeCommentRequestBody, LikeCommentResponse } from './interface';
 import { WebClientSession } from '@phading/user_session_service_interface/web_client_session';
 
 export abstract class PostCommentHandlerInterface implements ServiceHandlerInterface {
@@ -27,6 +27,15 @@ export abstract class GetCommentsHandlerInterface implements ServiceHandlerInter
     body: GetCommentsRequestBody,
     auth: WebClientSession,
   ): Promise<GetCommentsResponse>;
+}
+
+export abstract class GetCommentLikingHandlerInterface implements ServiceHandlerInterface {
+  public descriptor = GET_COMMENT_LIKING;
+  public abstract handle(
+    requestId: string,
+    body: GetCommentLikingRequestBody,
+    auth: WebClientSession,
+  ): Promise<GetCommentLikingResponse>;
 }
 
 export abstract class LikeCommentHandlerInterface implements ServiceHandlerInterface {
