@@ -1,15 +1,15 @@
 [{
-  "name": "Liking",
-  "enum": {
-    "values": [{
-      "name": "NEUTRAL",
-      "value": 1
+  "name": "AccountSnapshot",
+  "message": {
+    "fields": [{
+      "name": "accountId",
+      "type": "string"
     }, {
-      "name": "LIKE",
-      "value": 2
+      "name": "naturalName",
+      "type": "string"
     }, {
-      "name": "DISLIKE",
-      "value": 3
+      "name": "avatarSmallPath",
+      "type": "string"
     }]
   }
 }, {
@@ -27,8 +27,7 @@
       "comment": "Timestamp in milliseconds of the video."
     }, {
       "name": "author",
-      "type": "AccountSnapshot",
-      "import": "@phading/user_service_interface/third_person/account"
+      "type": "AccountSnapshot"
     }, {
       "name": "isThePublisher",
       "type": "boolean",

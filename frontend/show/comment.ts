@@ -1,29 +1,28 @@
-import { EnumDescriptor, MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
-import { AccountSnapshot, ACCOUNT_SNAPSHOT } from '@phading/user_service_interface/third_person/account';
+import { MessageDescriptor, PrimitiveType } from '@selfage/message/descriptor';
 
-export enum Liking {
-  NEUTRAL = 1,
-  LIKE = 2,
-  DISLIKE = 3,
+export interface AccountSnapshot {
+  accountId?: string,
+  naturalName?: string,
+  avatarSmallPath?: string,
 }
 
-export let LIKING: EnumDescriptor<Liking> = {
-  name: 'Liking',
-  values: [
+export let ACCOUNT_SNAPSHOT: MessageDescriptor<AccountSnapshot> = {
+  name: 'AccountSnapshot',
+  fields: [
     {
-      name: 'NEUTRAL',
-      value: 1,
+      name: 'accountId',
+      primitiveType: PrimitiveType.STRING,
     },
     {
-      name: 'LIKE',
-      value: 2,
+      name: 'naturalName',
+      primitiveType: PrimitiveType.STRING,
     },
     {
-      name: 'DISLIKE',
-      value: 3,
+      name: 'avatarSmallPath',
+      primitiveType: PrimitiveType.STRING,
     },
   ]
-}
+};
 
 export interface Comment {
   commentId?: string,
