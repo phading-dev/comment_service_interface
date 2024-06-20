@@ -8,9 +8,9 @@
       "name": "content",
       "type": "string"
     }, {
-      "name": "timestamp",
+      "name": "timestampMs",
       "type": "number",
-      "comment": "Timestamp in milliseconds of the video."
+      "comment": "Timestamp of the video."
     }]
   }
 }, {

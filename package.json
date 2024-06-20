@@ -1,6 +1,6 @@
 {
   "name": "@phading/comment_service_interface",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The interface of CommentService.",
   "repository": {
     "type": "git",

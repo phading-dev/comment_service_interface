@@ -6,8 +6,8 @@ import { CLIENT_SESSION } from '@phading/user_session_service_interface/client_s
 export interface PostCommentRequestBody {
   episodeId?: string,
   content?: string,
-/* Timestamp in milliseconds of the video. */
-  timestamp?: number,
+/* Timestamp of the video. */
+  timestampMs?: number,
 }
 
 export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> = {
@@ -22,7 +22,7 @@ export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> 
       primitiveType: PrimitiveType.STRING,
     },
     {
-      name: 'timestamp',
+      name: 'timestampMs',
       primitiveType: PrimitiveType.NUMBER,
     },
   ]

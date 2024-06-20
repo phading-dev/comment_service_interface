@@ -27,8 +27,8 @@ export let ACCOUNT_SNAPSHOT: MessageDescriptor<AccountSnapshot> = {
 export interface Comment {
   commentId?: string,
   content?: string,
-/* Timestamp in milliseconds of the video. */
-  timestamp?: number,
+/* Timestamp of the video. */
+  timestampMs?: number,
   author?: AccountSnapshot,
 /* Whether the author is the publisher of the show. */
   isThePublisher?: boolean,
@@ -46,7 +46,7 @@ export let COMMENT: MessageDescriptor<Comment> = {
       primitiveType: PrimitiveType.STRING,
     },
     {
-      name: 'timestamp',
+      name: 'timestampMs',
       primitiveType: PrimitiveType.NUMBER,
     },
     {
