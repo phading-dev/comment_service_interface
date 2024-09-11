@@ -1,8 +1,8 @@
-import { ServiceHandlerInterface } from '@selfage/service_descriptor/service_handler_interface';
-import { POST_COMMENT, PostCommentRequestBody, PostCommentResponse, GET_COMMENTS, GetCommentsRequestBody, GetCommentsResponse } from './interface';
+import { PostCommentRequestBody, POST_COMMENT, PostCommentResponse, GetCommentsRequestBody, GET_COMMENTS, GetCommentsResponse } from './interface';
 import { ClientSession } from '@phading/user_session_service_interface/client_session';
+import { WebHandlerInterface } from '@selfage/service_descriptor/handler_interface';
 
-export abstract class PostCommentHandlerInterface implements ServiceHandlerInterface {
+export abstract class PostCommentHandlerInterface implements WebHandlerInterface {
   public descriptor = POST_COMMENT;
   public abstract handle(
     loggingPrefix: string,
@@ -11,7 +11,7 @@ export abstract class PostCommentHandlerInterface implements ServiceHandlerInter
   ): Promise<PostCommentResponse>;
 }
 
-export abstract class GetCommentsHandlerInterface implements ServiceHandlerInterface {
+export abstract class GetCommentsHandlerInterface implements WebHandlerInterface {
   public descriptor = GET_COMMENTS;
   public abstract handle(
     loggingPrefix: string,

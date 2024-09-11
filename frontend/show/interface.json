@@ -1,66 +1,71 @@
 [{
-  "name": "PostCommentRequestBody",
   "message": {
+    "name": "PostCommentRequestBody",
     "fields": [{
       "name": "episodeId",
-      "type": "string"
+      "type": "string",
+      "index": 1
     }, {
       "name": "content",
-      "type": "string"
+      "type": "string",
+      "index": 2
     }, {
       "name": "timestampMs",
       "type": "number",
+      "index": 3,
       "comment": "Timestamp of the video."
     }]
   }
 }, {
-  "name": "PostCommentResponse",
   "message": {
+    "name": "PostCommentResponse",
     "fields": [{
       "name": "comment",
       "type": "Comment",
-      "import": "./comment"
+      "import": "./frontend/show/comment",
+      "index": 1
     }]
   }
 }, {
-  "name": "PostComment",
-  "service": {
-    "path": "/PostComment",
-    "body": "PostCommentRequestBody",
-    "auth": {
-      "key": "auth",
-      "type": "ClientSession",
-      "import": "@phading/user_session_service_interface/client_session"
-    },
-    "response": "PostCommentResponse",
-    "outputWebClient": "./client_requests",
-    "outputHandler": "./server_handlers"
-  }
-}, {
-  "name": "GetCommentsRequestBody",
   "message": {
+    "name": "GetCommentsRequestBody",
     "fields": [{
       "name": "episodeId",
-      "type": "string"
+      "type": "string",
+      "index": 1
     }]
   }
 }, {
-  "name": "GetCommentsResponse",
   "message": {
+    "name": "GetCommentsResponse",
     "fields": [{
       "name": "comments",
       "type": "Comment",
-      "import": "./comment",
-      "isArray": true
+      "import": "./frontend/show/comment",
+      "isArray": true,
+      "index": 1
     }]
   }
 }, {
-  "name": "GetComments",
-  "service": {
-    "path": "/GetComments",
-    "body": "GetCommentsRequestBody",
-    "response": "GetCommentsResponse",
-    "outputWebClient": "./client_requests",
-    "outputHandler": "./server_handlers"
+  "webService": {
+    "name": "CommentFrontendShowService",
+    "remoteCalls": [{
+      "name": "PostComment",
+      "path": "/PostComment",
+      "body": "PostCommentRequestBody",
+      "auth": {
+        "key": "auth",
+        "type": "ClientSession",
+        "import": "@phading/user_session_service_interface/client_session"
+      },
+      "response": "PostCommentResponse"
+    }, {
+      "name": "GetComments",
+      "path": "/GetComments",
+      "body": "GetCommentsRequestBody",
+      "response": "GetCommentsResponse"
+    }],
+    "outputClient": "./frontend/show/client",
+    "outputHandler": "./frontend/show/handler"
   }
 }]
