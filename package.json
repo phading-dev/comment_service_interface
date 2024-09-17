@@ -7,7 +7,7 @@
     "url": "git+https://github.com/phading-dev/comment_service_interface.git"
   },
   "author": "Yuxuan Xie <ykuyo.dev@gmail.com>",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/phading-dev/comment_service_interface/issues"
   },
