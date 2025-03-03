@@ -1,0 +1,21 @@
+- kind: Message
+  name: PostedComment
+  fields:
+    - name: seasonId
+      type: string
+      index: 1
+    - name: episodeId
+      type: string
+      index: 2
+    - name: commentId
+      type: string
+      index: 3
+    - name: content
+      type: string
+      index: 4
+    - name: pinTimeMs # Timestamp of the video.
+      type: number
+      index: 5
+    - name: postedTimeMs
+      type: number
+      index: 6

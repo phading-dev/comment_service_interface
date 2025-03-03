@@ -1,0 +1,72 @@
+- kind: Message
+  name: PostCommentRequestBody
+  fields:
+    - name: seasonId
+      type: string
+      index: 1
+    - name: episodeId
+      type: string
+      index: 2
+    - name: content
+      type: string
+      index: 3
+    - name: pinTimeMs # Timestamp of the video.
+      type: number
+      index: 4
+- kind: Message
+  name: PostCommentResponse
+  fields:
+    - name: comment
+      type: Comment
+      import: ./show/web/comment
+      index: 1
+- kind: Message
+  name: DeleteCommentRequestBody
+  fields:
+    - name: commentId
+      type: string
+      index: 1
+- kind: Message
+  name: DeleteCommentResponse
+- kind: Message
+  name: ListPostedCommentsRequestBody
+  fields:
+    - name: limit
+      type: number
+      index: 1
+    - name: postedTimeCursor
+      type: number
+      index: 2
+- kind: Message
+  name: ListPostedCommentsResponse
+  fields:
+    - name: comments
+      type: PostedComment
+      import: ./show/web/author/posted_comment
+      isArray: true
+      index: 1
+    - name: postedTimeCursor
+      type: number
+      index: 2
+- kind: RemoteCallsGroup
+  name: CommentShowWebAuthorRemoteCalls
+  service: CommentWebService
+  importService: ./service
+  calls:
+    - name: PostComment
+      path: /PostComment
+      body: PostCommentRequestBody
+      authKey: a
+      response: PostCommentResponse
+    - name: DeleteComment
+      path: /DeleteComment
+      body: DeleteCommentRequestBody
+      authKey: a
+      response: DeleteCommentResponse
+    - name: ListPostedComments
+      path: /ListPostedComments
+      body: ListPostedCommentsRequestBody
+      authKey: a
+      response: ListPostedCommentsResponse
+  outputClient: ./show/web/author/client
+  outputHandler: ./show/web/author/handler

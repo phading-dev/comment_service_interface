@@ -1,0 +1,38 @@
+- kind: Message
+  name: ListCommentsRequestBody
+  fields:
+    - name: seasonId
+      type: string
+      index: 1
+    - name: episodeId
+      type: string
+      index: 2
+    - name: limit
+      type: number
+      index: 3
+    - name: pinTimeCursor
+      type: number
+      index: 4
+- kind: Message
+  name: ListCommentsResponse
+  fields:
+    - name: comments
+      type: Comment
+      import: ./show/web/comment
+      isArray: true
+      index: 1
+    - name: pinTimeCursor
+      type: number
+      index: 2
+- kind: RemoteCallsGroup
+  name: CommentShowWebReaderRemoteCalls
+  service: CommentWebService
+  importService: ./service
+  calls:
+    - name: ListComments
+      path: /ListComments
+      body: ListCommentsRequestBody
+      authKey: a
+      response: ListCommentsResponse
+  outputClient: ./show/web/reader/client
+  outputHandler: ./show/web/reader/handler
