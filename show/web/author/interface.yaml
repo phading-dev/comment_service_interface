@@ -10,7 +10,7 @@
     - name: content
       type: string
       index: 3
-    - name: pinTimeMs # Timestamp of the video.
+    - name: pinTimestampMs # Timestamp of the video.
       type: number
       index: 4
 - kind: Message

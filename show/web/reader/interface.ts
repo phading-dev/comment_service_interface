@@ -7,7 +7,7 @@ export interface ListCommentsRequestBody {
   seasonId?: string,
   episodeId?: string,
   limit?: number,
-  pinTimeCursor?: number,
+  pinTimestampCursor?: number,
 }
 
 export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody> = {
@@ -25,7 +25,7 @@ export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody
     index: 3,
     primitiveType: PrimitiveType.NUMBER,
   }, {
-    name: 'pinTimeCursor',
+    name: 'pinTimestampCursor',
     index: 4,
     primitiveType: PrimitiveType.NUMBER,
   }],
@@ -33,7 +33,7 @@ export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody
 
 export interface ListCommentsResponse {
   comments?: Array<Comment>,
-  pinTimeCursor?: number,
+  pinTimestampCursor?: number,
 }
 
 export let LIST_COMMENTS_RESPONSE: MessageDescriptor<ListCommentsResponse> = {
@@ -44,7 +44,7 @@ export let LIST_COMMENTS_RESPONSE: MessageDescriptor<ListCommentsResponse> = {
     messageType: COMMENT,
     isArray: true,
   }, {
-    name: 'pinTimeCursor',
+    name: 'pinTimestampCursor',
     index: 2,
     primitiveType: PrimitiveType.NUMBER,
   }],

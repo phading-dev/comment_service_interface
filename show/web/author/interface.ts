@@ -8,7 +8,7 @@ export interface PostCommentRequestBody {
   seasonId?: string,
   episodeId?: string,
   content?: string,
-  pinTimeMs?: number,
+  pinTimestampMs?: number,
 }
 
 export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> = {
@@ -26,7 +26,7 @@ export let POST_COMMENT_REQUEST_BODY: MessageDescriptor<PostCommentRequestBody> 
     index: 3,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'pinTimeMs',
+    name: 'pinTimestampMs',
     index: 4,
     primitiveType: PrimitiveType.NUMBER,
   }],

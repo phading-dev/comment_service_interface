@@ -4,7 +4,7 @@ export interface Comment {
   commentId?: string,
   authorId?: string,
   content?: string,
-  pinTimeMs?: number,
+  pinTimestampMs?: number,
 }
 
 export let COMMENT: MessageDescriptor<Comment> = {
@@ -22,7 +22,7 @@ export let COMMENT: MessageDescriptor<Comment> = {
     index: 3,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'pinTimeMs',
+    name: 'pinTimestampMs',
     index: 4,
     primitiveType: PrimitiveType.NUMBER,
   }],
