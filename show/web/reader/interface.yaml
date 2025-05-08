@@ -7,10 +7,10 @@
     - name: episodeId
       type: string
       index: 2
-    - name: limit
+    - name: pinnedTimeMsStart
       type: number
       index: 3
-    - name: pinTimestampCursor
+    - name: pinnedTimeMsEnd # Exclusive
       type: number
       index: 4
 - kind: Message
@@ -21,9 +21,6 @@
       import: ./show/web/comment
       isArray: true
       index: 1
-    - name: pinTimestampCursor
-      type: number
-      index: 2
 - kind: RemoteCallsGroup
   name: CommentShowWebReaderRemoteCalls
   service: CommentWebService

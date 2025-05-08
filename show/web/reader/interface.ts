@@ -6,8 +6,8 @@ import { RemoteCallDescriptor } from '@selfage/service_descriptor';
 export interface ListCommentsRequestBody {
   seasonId?: string,
   episodeId?: string,
-  limit?: number,
-  pinTimestampCursor?: number,
+  pinnedTimeMsStart?: number,
+  pinnedTimeMsEnd?: number,
 }
 
 export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody> = {
@@ -21,11 +21,11 @@ export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody
     index: 2,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'limit',
+    name: 'pinnedTimeMsStart',
     index: 3,
     primitiveType: PrimitiveType.NUMBER,
   }, {
-    name: 'pinTimestampCursor',
+    name: 'pinnedTimeMsEnd',
     index: 4,
     primitiveType: PrimitiveType.NUMBER,
   }],
@@ -33,7 +33,6 @@ export let LIST_COMMENTS_REQUEST_BODY: MessageDescriptor<ListCommentsRequestBody
 
 export interface ListCommentsResponse {
   comments?: Array<Comment>,
-  pinTimestampCursor?: number,
 }
 
 export let LIST_COMMENTS_RESPONSE: MessageDescriptor<ListCommentsResponse> = {
@@ -43,10 +42,6 @@ export let LIST_COMMENTS_RESPONSE: MessageDescriptor<ListCommentsResponse> = {
     index: 1,
     messageType: COMMENT,
     isArray: true,
-  }, {
-    name: 'pinTimestampCursor',
-    index: 2,
-    primitiveType: PrimitiveType.NUMBER,
   }],
 };
 

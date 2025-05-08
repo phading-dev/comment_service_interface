@@ -10,6 +10,6 @@
     - name: content
       type: string
       index: 3
-    - name: pinTimestampMs
+    - name: pinnedTimeMs
       type: number
       index: 4
