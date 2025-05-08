@@ -5,7 +5,7 @@ export interface PostedComment {
   episodeId?: string,
   commentId?: string,
   content?: string,
-  pinnedTimeMs?: number,
+  pinnedVideoTimeMs?: number,
   postedTimeMs?: number,
 }
 
@@ -28,7 +28,7 @@ export let POSTED_COMMENT: MessageDescriptor<PostedComment> = {
     index: 4,
     primitiveType: PrimitiveType.STRING,
   }, {
-    name: 'pinnedTimeMs',
+    name: 'pinnedVideoTimeMs',
     index: 5,
     primitiveType: PrimitiveType.NUMBER,
   }, {

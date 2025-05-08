@@ -7,10 +7,10 @@
     - name: episodeId
       type: string
       index: 2
-    - name: pinnedTimeMsStart
+    - name: pinnedVideoTimeMsStart
       type: number
       index: 3
-    - name: pinnedTimeMsEnd # Exclusive
+    - name: pinnedVideoTimeMsEnd # Exclusive
       type: number
       index: 4
 - kind: Message

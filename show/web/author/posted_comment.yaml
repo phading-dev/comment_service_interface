@@ -13,7 +13,7 @@
     - name: content
       type: string
       index: 4
-    - name: pinnedTimeMs
+    - name: pinnedVideoTimeMs
       type: number
       index: 5
     - name: postedTimeMs
