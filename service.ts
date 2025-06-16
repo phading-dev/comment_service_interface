@@ -2,5 +2,5 @@ import { ServiceDescriptor } from '@selfage/service_descriptor';
 
 export let COMMENT_WEB_SERVICE: ServiceDescriptor = {
   name: "CommentWebService",
-  path: "/ct/w",
+  path: "/ctw",
 }

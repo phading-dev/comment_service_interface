@@ -52,6 +52,7 @@
   name: CommentShowWebAuthorRemoteCalls
   service: CommentWebService
   importService: ./service
+  path: /sa # /show-author
   calls:
     - name: PostComment
       path: /PostComment

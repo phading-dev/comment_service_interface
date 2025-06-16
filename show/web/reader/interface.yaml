@@ -25,6 +25,7 @@
   name: CommentShowWebReaderRemoteCalls
   service: CommentWebService
   importService: ./service
+  path: /sr # /show-reader
   calls:
     - name: ListComments
       path: /ListComments

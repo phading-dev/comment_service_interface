@@ -48,7 +48,7 @@ export let LIST_COMMENTS_RESPONSE: MessageDescriptor<ListCommentsResponse> = {
 export let LIST_COMMENTS: RemoteCallDescriptor = {
   name: "ListComments",
   service: COMMENT_WEB_SERVICE,
-  path: "/ListComments",
+  path: "/sr/ListComments",
   body: {
     messageType: LIST_COMMENTS_REQUEST_BODY,
   },

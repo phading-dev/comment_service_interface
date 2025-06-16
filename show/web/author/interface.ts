@@ -106,7 +106,7 @@ export let LIST_POSTED_COMMENTS_RESPONSE: MessageDescriptor<ListPostedCommentsRe
 export let POST_COMMENT: RemoteCallDescriptor = {
   name: "PostComment",
   service: COMMENT_WEB_SERVICE,
-  path: "/PostComment",
+  path: "/sa/PostComment",
   body: {
     messageType: POST_COMMENT_REQUEST_BODY,
   },
@@ -119,7 +119,7 @@ export let POST_COMMENT: RemoteCallDescriptor = {
 export let DELETE_COMMENT: RemoteCallDescriptor = {
   name: "DeleteComment",
   service: COMMENT_WEB_SERVICE,
-  path: "/DeleteComment",
+  path: "/sa/DeleteComment",
   body: {
     messageType: DELETE_COMMENT_REQUEST_BODY,
   },
@@ -132,7 +132,7 @@ export let DELETE_COMMENT: RemoteCallDescriptor = {
 export let LIST_POSTED_COMMENTS: RemoteCallDescriptor = {
   name: "ListPostedComments",
   service: COMMENT_WEB_SERVICE,
-  path: "/ListPostedComments",
+  path: "/sa/ListPostedComments",
   body: {
     messageType: LIST_POSTED_COMMENTS_REQUEST_BODY,
   },
